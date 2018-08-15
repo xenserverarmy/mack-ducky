@@ -3,4 +3,7 @@ language: java
 script: mvn clean package -Dmaven.test.skip=true
 
 after_success:
-  - bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://blackduck.showcasecloud.us" --blackduck.hub.api.token="${HUB_API_TOKEN}" --detect.project.name="MackDucky-Travis" --detect.policy.check.fail.on.severities=ALL --detect.risk.report.pdf=true --blackduck.hub.trust.cert=true --logging.level.com.blackducksoftware.integration=trace
+#  - bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://blackduck.showcasecloud.us" --blackduck.hub.api.token="${HUB_API_TOKEN}" --detect.project.name="MackDucky-Travis" --detect.policy.check.fail.on.severities=ALL --detect.risk.report.pdf=true --blackduck.hub.trust.cert=true --logging.level.com.blackducksoftware.integration=trace
+#  - curl https://codeload.github.com/yevster/hub-spdx/tar.gz/1.1.0 --output hub-spdx.tar.gz
+  - wget https://github.com/blackducksoftware/hub-spdx/releases/download/1.1.1/hub-spdx-1.1.1.jar -O hub-spdx.jar
+#  - tar xzf hub-spdx.tar.gz
