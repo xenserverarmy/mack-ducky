@@ -3,4 +3,4 @@ language: java
 script: mvn clean package -Dmaven.test.skip=true
 
 after_success:
-  - bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://blackduck.showcasecloud.us" --blackduck.hub.api.token="${HUB_API_TOKEN}" --detect.project.name="MackDucky-Travis" --detect.project.version.name="${BUILD_TAG}" --detect.policy.check.fail.on.severities=ALL --detect.risk.report.pdf=true --blackduck.hub.trust.cert=true --logging.level.com.blackducksoftware.integration=trace
+  - bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://blackduck.showcasecloud.us" --blackduck.hub.api.token="${HUB_API_TOKEN}" --detect.project.name="MackDucky-Travis" --detect.policy.check.fail.on.severities=ALL --detect.risk.report.pdf=true --blackduck.hub.trust.cert=true --logging.level.com.blackducksoftware.integration=trace
