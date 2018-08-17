@@ -7,3 +7,5 @@ after_success:
 #  - curl https://codeload.github.com/yevster/hub-spdx/tar.gz/1.1.0 --output hub-spdx.tar.gz
   - wget https://github.com/blackducksoftware/hub-spdx/releases/download/1.1.1/hub-spdx-1.1.1.jar -O hub-spdx.jar
   - java -jar hub-spdx.jar --hub.url="$HUB_URL" --hub.username=$HUB_USER --hub.project.name="MackDucky-Travis" --hub.project.version=1.0.0  --hub.always.trust.cert=false --include.licenses=true --output.filename=output.spdx
+  - bash <(curl https://gitlab.com/yevster/spdx-server/raw/master/setup.sh)
+  - bin/s-post http://fuseki-oss-vancouver.apps.openshift3.showcasecloud.us/spdx default output.spdx
