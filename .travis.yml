@@ -12,3 +12,4 @@ after_success:
   - bash <(curl https://gitlab.com/yevster/spdx-server/raw/master/setup.sh)
   - tail output.rdf
   - bin/s-post http://fuseki-oss-vancouver.apps.openshift3.showcasecloud.us/spdx default output.rdf
+
